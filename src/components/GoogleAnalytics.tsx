@@ -1,4 +1,4 @@
-import Script from 'next/script'
+﻿import Script from 'next/script'
 
 const GA_MEASUREMENT_ID = 'G-Z4NM6X1HLH'
 
@@ -22,4 +22,3 @@ export default function GoogleAnalytics() {
     </>
   )
 }
-
