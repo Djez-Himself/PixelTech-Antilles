@@ -7,8 +7,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'PixelTech - Administration réseau & Système en Guadeloupe | Bouillante',
-  description: 'Expert en administration réseau et système en Guadeloupe. Infogérance, support technique, dépannage informatique. Basé à Bouillante, intervention rapide. Solutions open source professionnelles.',
-  keywords: 'administration réseau, infogérance, support technique, dépannage informatique, Guadeloupe, Bouillante, virtualisation, monitoring, Zabbix, GLPI, open source',
+  description: 'PixelTech Antilles - Expert en administration réseau et système en Guadeloupe. Infogérance, support technique, dépannage informatique. Basé à Bouillante, intervention rapide. Solutions open source professionnelles.',
+  keywords: 'PixelTech, PixelTech Antilles, Pixeltech, Pixeltech Antilles, administration réseau, infogérance, support technique, dépannage informatique, Guadeloupe, Bouillante, virtualisation, monitoring, Zabbix, GLPI, open source',
   alternates: {
     canonical: '/home',
   },
@@ -45,7 +45,7 @@ export default function Home() {
             </div>
             <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Votre partenaire IT de confiance. 
+                <strong>PixelTech Antilles</strong>, votre partenaire IT de confiance en Guadeloupe. 
                 Je vous accompagne pour <strong className="text-sky-400">sécuriser</strong>, <strong className="text-sky-400">optimiser</strong> et <strong className="text-sky-400">faire évoluer</strong> votre infrastructure informatique. 
                 Réactivité et solutions adaptées à vos besoins.
               </p>

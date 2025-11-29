@@ -8,8 +8,8 @@ export const metadata: Metadata = {
     default: 'PixelTech - Administration réseau & Système en Guadeloupe',
     template: '%s | PixelTech'
   },
-  description: 'Infogérance, administration réseau et support technique pour PME et particuliers en Guadeloupe. Basé à Bouillante, intervention rapide. Solutions open source professionnelles.',
-  keywords: ['administration réseau', 'infogérance', 'support technique', 'dépannage informatique', 'Guadeloupe', 'Bouillante', 'virtualisation', 'monitoring', 'Zabbix', 'GLPI', 'open source'],
+  description: 'PixelTech Antilles - Expert en administration réseau et système en Guadeloupe. Infogérance, support technique et dépannage informatique pour PME et particuliers. Basé à Bouillante, intervention rapide. Solutions open source professionnelles.',
+  keywords: ['PixelTech', 'PixelTech Antilles', 'Pixeltech', 'Pixeltech Antilles', 'administration réseau', 'infogérance', 'support technique', 'dépannage informatique', 'Guadeloupe', 'Bouillante', 'virtualisation', 'monitoring', 'Zabbix', 'GLPI', 'open source'],
   authors: [{ name: 'Benoit Paterne' }],
   creator: 'PixelTech',
   publisher: 'PixelTech',

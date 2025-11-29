@@ -8,8 +8,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Services - PixelTech | Administration réseau & Support technique en Guadeloupe',
-  description: 'Infogérance, administration réseau, support technique et dépannage informatique pour PME et particuliers. Bouillante, Guadeloupe. Solutions open source professionnelles.',
-  keywords: 'infogérance, administration réseau, support technique, dépannage informatique, Guadeloupe, Bouillante, virtualisation, monitoring, Zabbix, GLPI',
+  description: 'PixelTech Antilles - Services d\'infogérance, administration réseau, support technique et dépannage informatique pour PME et particuliers. Bouillante, Guadeloupe. Solutions open source professionnelles.',
+  keywords: 'PixelTech, PixelTech Antilles, Pixeltech, Pixeltech Antilles, infogérance, administration réseau, support technique, dépannage informatique, Guadeloupe, Bouillante, virtualisation, monitoring, Zabbix, GLPI',
   alternates: {
     canonical: '/services',
   },

@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Contact - PixelTech | Demande de devis et support en Guadeloupe',
-  description: 'Contactez PixelTech pour vos besoins en administration réseau et support technique. Formulaire de contact et demande de devis. Bouillante, Guadeloupe.',
-  keywords: 'contact PixelTech, demande de devis, support technique Guadeloupe, dépannage informatique Bouillante',
+  description: 'Contactez PixelTech Antilles pour vos besoins en administration réseau et support technique. Formulaire de contact et demande de devis. Bouillante, Guadeloupe.',
+  keywords: 'PixelTech, PixelTech Antilles, Pixeltech, contact PixelTech, demande de devis, support technique Guadeloupe, dépannage informatique Bouillante',
   alternates: {
     canonical: '/contact',
   },

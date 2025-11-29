@@ -4,8 +4,9 @@ export default function StructuredData() {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'PixelTech',
-    description: 'Expert en administration réseau et système en Guadeloupe. Infogérance, support technique, dépannage informatique.',
+    name: 'PixelTech Antilles',
+    alternateName: 'PixelTech',
+    description: 'PixelTech Antilles - Expert en administration réseau et système en Guadeloupe. Infogérance, support technique, dépannage informatique.',
     url: 'https://pixeltech-antilles.com',
     logo: 'https://pixeltech-antilles.com/logos/logo.png',
     address: {
@@ -35,7 +36,7 @@ export default function StructuredData() {
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Services PixelTech',
+      name: 'Services PixelTech Antilles',
       itemListElement: [
         {
           '@type': 'Offer',

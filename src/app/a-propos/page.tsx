@@ -6,8 +6,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'À propos - PixelTech | Expert IT en Guadeloupe',
-  description: 'Découvrez Benoit Paterne, expert en administration réseau et système basé à Bouillante, Guadeloupe. Parcours, compétences et valeurs. Solutions IT professionnelles.',
-  keywords: 'expert IT Guadeloupe, administration réseau, Benoit Paterne, Bouillante, infogérance, support technique',
+  description: 'PixelTech Antilles - Découvrez Benoit Paterne, expert en administration réseau et système basé à Bouillante, Guadeloupe. Parcours, compétences et valeurs. Solutions IT professionnelles.',
+  keywords: 'PixelTech, PixelTech Antilles, Pixeltech, expert IT Guadeloupe, administration réseau, Benoit Paterne, Bouillante, infogérance, support technique',
   alternates: {
     canonical: '/a-propos',
   },

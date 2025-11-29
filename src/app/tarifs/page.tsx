@@ -6,8 +6,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Tarifs - PixelTech | Tarification transparente pour services IT en Guadeloupe',
-  description: 'Tarifs transparents pour dépannage informatique, administration réseau et support technique. Dépannage à distance 40€/h, sur site 50€/h. Bouillante, Guadeloupe.',
-  keywords: 'tarifs informatique, prix dépannage, tarifs support technique, devis informatique, Guadeloupe, Bouillante',
+  description: 'PixelTech Antilles - Tarifs transparents pour dépannage informatique, administration réseau et support technique. Dépannage à distance 40€/h, sur site 50€/h. Bouillante, Guadeloupe.',
+  keywords: 'PixelTech, PixelTech Antilles, Pixeltech, tarifs informatique, prix dépannage, tarifs support technique, devis informatique, Guadeloupe, Bouillante',
   alternates: {
     canonical: '/tarifs',
   },
