@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /home/
+
+# Sitemap
+Sitemap: https://pixeltech-antilles.com/sitemap.xml
+
