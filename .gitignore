@@ -70,4 +70,6 @@ node_modules/
 
 # Fichiers de réflexion personnels
 TARIFS.md
+ANALYSE_*.md
+CONFIG_*.md
 

@@ -21,16 +21,10 @@ export default function Contact() {
     const formData = new FormData(form)
     const data = Object.fromEntries(formData.entries())
     
-    // Déterminer l'adresse email selon le type de demande
-    // Pour les devis : devis@pixeltech-antilles.com qui redirige vers contact@pixeltech-antilles.com
-    // Pour les contacts : contact@pixeltech-antilles.com
     const emailTo = requestType === 'devis' 
       ? 'devis@pixeltech-antilles.com' 
       : 'contact@pixeltech-antilles.com'
     
-    // Utiliser Web3Forms pour l'envoi direct d'email
-    // Pour obtenir une clé API gratuite : https://web3forms.com
-    // La clé peut être dans les variables d'environnement ou directement ici pour GitHub Pages
     const web3formsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '18fd716d-2f87-4ff3-9392-ef5a7387dd0d'
     
     if (!web3formsKey || web3formsKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
@@ -53,7 +47,6 @@ export default function Contact() {
           email: data.email as string,
           message: `Type de demande: ${requestType === 'devis' ? 'Demande de devis' : 'Contact général'}\n\nMessage:\n${data.message}`,
           to_email: emailTo,
-          // Pas de copie nécessaire car contact et devis sont des alias vers la même boîte
         }),
       })
 
