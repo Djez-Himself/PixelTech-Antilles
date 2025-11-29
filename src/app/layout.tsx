@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Providers } from '@/components/Providers'
 import StructuredData from '@/components/StructuredData'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 export const metadata: Metadata = {
   title: {
@@ -82,6 +83,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body data-theme="dark">
+        <GoogleAnalytics />
         <StructuredData />
         <Providers>
           {children}
