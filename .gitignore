@@ -74,3 +74,5 @@ ANALYSE_*.md
 CONFIG_*.md
 !CONFIG_DOMAINE.md
 
+
+docs/
