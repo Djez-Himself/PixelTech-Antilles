@@ -159,7 +159,7 @@ NODE_ENV=production
 
 ### Google Analytics
 
-Google Analytics est configuré avec l'ID de mesure `G-Z4NM6X1HLH`. Les données sont disponibles dans [Google Analytics](https://analytics.google.com).
+Google Analytics est configuré pour le suivi des visiteurs. Les données sont disponibles dans [Google Analytics](https://analytics.google.com).
 
 ### Domaine personnalisé
 
