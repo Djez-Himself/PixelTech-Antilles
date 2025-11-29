@@ -242,7 +242,7 @@ Ce projet met en valeur :
 
 ## Auteur
 
-**Benoit Paterne** - Expert en Administration Réseau & Système  
+**Benoit** - Expert en Administration Réseau & Système  
 PixelTech Antilles - Bouillante, Guadeloupe
 
 ---
