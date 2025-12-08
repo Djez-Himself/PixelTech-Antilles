@@ -2,113 +2,96 @@
 
 Site web professionnel de **PixelTech Antilles**, expert en administration réseau et système en Guadeloupe.
 
-## Présentation
+[![Déploiement](https://img.shields.io/badge/d%C3%A9ploiement-GitHub%20Pages-blue)](https://pixeltech-antilles.com)
+[![Next.js](https://img.shields.io/badge/Next.js-14.0.4-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.0-38bdf8)](https://tailwindcss.com/)
 
-Site vitrine moderne et performant développé avec **Next.js 14** et **TypeScript**, présentant les services d'administration réseau, d'infogérance et de support technique pour PME et particuliers en Guadeloupe.
+## 🎯 À propos
 
-Ce projet démontre une expertise en développement web moderne, architecture modulaire, optimisation SEO, et intégration d'outils professionnels.
+Site vitrine moderne et performant développant une expertise en **administration réseau, infogérance et support technique** pour PME et particuliers en Guadeloupe.
 
-## Stack Technique
+**🌐 Site en ligne** : [https://pixeltech-antilles.com](https://pixeltech-antilles.com)
+
+---
+
+## 🚀 Stack Technique
 
 ### Frontend
-- **Next.js 14.2.33** - Framework React avec App Router (Server Components, Static Generation)
-- **TypeScript 5.3.3** - Typage statique pour la robustesse et la maintenabilité
-- **React 18.2.0** - Bibliothèque UI moderne avec hooks et contextes
-- **Tailwind CSS 3.4.0** - Framework CSS utilitaire pour un design responsive
-- **PostCSS & Autoprefixer** - Optimisation CSS et compatibilité navigateurs
+- **Next.js 14** - Framework React avec App Router (Server & Client Components)
+- **TypeScript 5.3.3** - Typage statique pour la robustesse du code
+- **React 18.2.0** - Bibliothèque UI moderne
+- **Tailwind CSS 3.4.0** - Framework CSS utilitaire responsive
+- **PostCSS & Autoprefixer** - Optimisation CSS
 
 ### Déploiement & Infrastructure
-- **GitHub Pages** - Hébergement statique haute disponibilité
-- **GitHub Actions** - CI/CD automatisé avec déploiement continu
-- **Next.js Static Export** - Génération de site statique optimisé
-- **Domaine personnalisé** - pixeltech-antilles.com avec SSL/HTTPS
+- **GitHub Pages** - Hébergement statique
+- **GitHub Actions** - CI/CD automatisé
+- **Next.js Static Export** - Site statique optimisé
+- **Domaine personnalisé** - pixeltech-antilles.com avec SSL
 
 ### Analytics & SEO
-- **Google Analytics 4** - Suivi des visiteurs et analyse comportementale
-- **Google Search Console** - Optimisation SEO et monitoring d'indexation
-- **Schema.org** - Données structurées (LocalBusiness, Person) pour les moteurs de recherche
-- **Sitemap.xml** - Plan du site automatisé pour les crawlers
-- **Robots.txt** - Configuration optimale des crawlers
+- **Google Analytics 4** - Suivi des visiteurs et conversions
+- **Schema.org** - Données structurées (LocalBusiness + Person)
+- **Sitemap.xml** - Plan du site automatisé
+- **Robots.txt** - Configuration des crawlers
+- **OpenGraph & Twitter Cards** - Optimisation partage réseaux sociaux
 
 ### Sécurité & Performance
-- **Honeypot** - Protection anti-spam sur le formulaire de contact
-- **Web3Forms** - Intégration sécurisée pour l'envoi d'emails
-- **Content Security Policy** - Protection contre les attaques XSS
-- **Image Optimization** - Optimisation automatique des assets
+- **Honeypot** - Protection anti-spam formulaire
+- **Web3Forms** - Envoi d'emails sécurisé
+- **Image Optimization** - Optimisation automatique via next/image
 - **Code Splitting** - Chargement optimisé des composants
 
-## Architecture du Projet
+---
+
+## 📁 Architecture du Projet
 
 ```
-PixelTech-Antilles/
+website/
 ├── src/
-│   ├── app/                    # Pages Next.js (App Router)
-│   │   ├── page.tsx           # Page de construction (beta)
-│   │   ├── home/              # Page d'accueil principale
-│   │   ├── services/          # Présentation des services
-│   │   ├── tarifs/            # Tarification transparente
-│   │   ├── a-propos/          # À propos et compétences
-│   │   ├── contact/           # Formulaire de contact
-│   │   ├── layout.tsx         # Layout racine avec métadonnées
-│   │   └── globals.css        # Styles globaux Tailwind
-│   ├── components/            # Composants réutilisables modulaires
-│   │   ├── GoogleAnalytics.tsx    # Intégration Google Analytics
-│   │   ├── StructuredData.tsx     # Schema.org pour SEO
-│   │   ├── Header.tsx             # Navigation responsive
-│   │   ├── Footer.tsx             # Footer avec liens
-│   │   ├── PageHero.tsx           # Hero section réutilisable
-│   │   ├── SectionHeader.tsx      # En-têtes de section
-│   │   ├── FeatureList.tsx        # Listes de fonctionnalités
-│   │   ├── ServiceCard.tsx        # Cartes de services
-│   │   └── Providers.tsx          # Contextes React
-│   └── contexts/              # Contextes React pour l'état global
-│       └── ThemeContext.tsx   # Gestion des thèmes
-├── public/                    # Assets statiques
-│   ├── logos/                 # Logos et images
-│   ├── robots.txt             # Configuration crawlers
-│   ├── sitemap.xml            # Plan du site
-│   ├── CNAME                  # Domaine personnalisé
-│   └── favicon/               # Icônes multi-plateformes
+│   ├── app/                      # Pages Next.js (App Router)
+│   │   ├── layout.tsx           # Layout racine + métadonnées globales
+│   │   ├── page.tsx             # Page d'accueil
+│   │   ├── globals.css          # Styles globaux + thème
+│   │   ├── services/            # Page Services
+│   │   ├── tarifs/              # Page Tarifs
+│   │   ├── a-propos/            # Page À propos
+│   │   └── contact/             # Page Contact (avec layout)
+│   ├── components/              # Composants réutilisables
+│   │   ├── GoogleAnalytics.tsx  # Intégration GA4
+│   │   ├── StructuredData.tsx   # Schema.org pour SEO
+│   │   ├── Header.tsx           # Navigation responsive
+│   │   ├── Footer.tsx           # Footer avec liens
+│   │   ├── PageHero.tsx         # Hero section réutilisable
+│   │   ├── FeatureList.tsx      # Listes de fonctionnalités
+│   │   ├── ServicesTabs.tsx     # Onglets PME/Particuliers (Services)
+│   │   └── TarifsTabs.tsx       # Onglets PME/Particuliers (Tarifs)
+│   └── types/                   # Types TypeScript partagés
+│       └── services.ts          # Types Service & Forfait
+├── public/                      # Assets statiques
+│   ├── logos/                   # Logo PixelTech
+│   ├── robots.txt               # Configuration crawlers
+│   ├── sitemap.xml              # Plan du site
+│   ├── CNAME                    # Domaine personnalisé
+│   ├── site.webmanifest         # PWA manifest
+│   └── favicon*                 # Icônes multi-plateformes
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml         # Pipeline CI/CD GitHub Actions
-├── next.config.js             # Configuration Next.js
-├── tailwind.config.js         # Configuration Tailwind
-├── tsconfig.json              # Configuration TypeScript
-└── package.json              # Dépendances et scripts
+│       └── deploy.yml           # Pipeline CI/CD automatique
+├── next.config.js               # Configuration Next.js
+├── tailwind.config.js           # Configuration Tailwind
+├── tsconfig.json                # Configuration TypeScript
+└── package.json                 # Dépendances et scripts
 ```
 
-## Architecture & Bonnes Pratiques
+---
 
-### Modularité
-- **Composants réutilisables** - Architecture DRY (Don't Repeat Yourself)
-- **Séparation des responsabilités** - Composants, pages, contextes bien organisés
-- **TypeScript strict** - Typage complet pour éviter les erreurs
-- **Code modulaire** - Facilite la maintenance et l'évolution
-
-### Performance
-- **Static Site Generation (SSG)** - Pages pré-rendues pour des performances optimales
-- **Code Splitting automatique** - Chargement optimisé par route
-- **Image Optimization** - Optimisation automatique des images Next.js
-- **Lazy Loading** - Chargement différé des composants non critiques
-
-### SEO & Accessibilité
-- **Métadonnées complètes** - Title, description, Open Graph, Twitter Cards sur chaque page
-- **Schema.org** - Données structurées pour un meilleur référencement
-- **Sémantique HTML** - Structure HTML5 sémantique
-- **Accessibilité** - ARIA labels, navigation au clavier, contraste
-
-### Sécurité
-- **Protection anti-spam** - Honeypot sur le formulaire de contact
-- **Validation côté client et serveur** - Double validation des données
-- **HTTPS** - Certificat SSL via GitHub Pages (Let's Encrypt)
-- **Content Security Policy** - Protection contre les injections
-
-## Développement Local
+## 🛠️ Développement Local
 
 ### Prérequis
 - Node.js 20.x ou supérieur
-- npm ou yarn
+- npm
 
 ### Installation
 
@@ -119,12 +102,17 @@ cd PixelTech-Antilles
 
 # Installer les dépendances
 npm install
+
+# Lancer le serveur de développement
+npm run dev
 ```
+
+Le site sera accessible sur [http://localhost:3000](http://localhost:3000)
 
 ### Scripts disponibles
 
 ```bash
-# Développement local (http://localhost:3000)
+# Développement avec hot-reload
 npm run dev
 
 # Build de production
@@ -132,25 +120,27 @@ npm run build
 
 # Démarrer le serveur de production
 npm start
-
-# Export statique (pour GitHub Pages)
-npm run export
 ```
 
-## Pages du Site
+---
 
-- **/** - Page de construction (phase beta)
-- **/home** - Page d'accueil avec présentation des services
-- **/services** - Détail des services (infogérance, support technique)
-- **/tarifs** - Tarification transparente et adaptée
-- **/a-propos** - Présentation, compétences et valeurs
-- **/contact** - Formulaire de contact avec protection anti-spam
+## 📄 Pages du Site
 
-## Configuration
+| Page | Route | Description |
+|------|-------|-------------|
+| **Accueil** | `/` | Présentation des services et CTAs |
+| **Services** | `/services` | Détail des services PME et Particuliers |
+| **Tarifs** | `/tarifs` | Tarification transparente par forfait |
+| **À propos** | `/a-propos` | Présentation, compétences et valeurs |
+| **Contact** | `/contact` | Formulaire de contact avec anti-spam |
+
+---
+
+## ⚙️ Configuration
 
 ### Variables d'environnement
 
-Le projet utilise des variables d'environnement pour la configuration :
+Créer un fichier `.env.local` :
 
 ```env
 NEXT_PUBLIC_WEB3FORMS_KEY=votre_cle_web3forms
@@ -159,92 +149,122 @@ NODE_ENV=production
 
 ### Google Analytics
 
-Google Analytics est configuré pour le suivi des visiteurs. Les données sont disponibles dans [Google Analytics](https://analytics.google.com).
+ID de suivi configuré : `G-Z4NM6X1HLH`
 
-### Domaine personnalisé
-
-Le site utilise le domaine personnalisé `pixeltech-antilles.com` configuré via :
-- Fichier `public/CNAME`
-- Configuration DNS (Google Workspace)
-- GitHub Pages settings avec HTTPS forcé
-
-## Déploiement
-
-### Processus CI/CD
-
-Le site est déployé automatiquement via **GitHub Actions** à chaque push sur la branche `main` :
-
-1. **Checkout** du code source
-2. **Installation** des dépendances (`npm ci`)
-3. **Build** du site statique (`npm run build`)
-4. **Génération** du dossier `out/` avec le site statique
-5. **Déploiement** automatique sur GitHub Pages
-6. **Propagation** sur le domaine personnalisé
-
-### URL de production
-
-**Site en ligne** : [https://pixeltech-antilles.com](https://pixeltech-antilles.com)
-
-## Design & UX
-
-- **Thème sombre moderne** - Interface professionnelle et élégante
-- **Responsive Design** - Mobile-first, adaptatif à tous les écrans
-- **Micro-interactions** - Animations subtiles pour une meilleure UX
-- **Hiérarchie visuelle** - Structure claire et lisible
-- **Accessibilité** - Respect des standards WCAG
-
-## SEO & Référencement
-
-- **Métadonnées optimisées** - Title, description, keywords sur chaque page
-- **Schema.org** - Données structurées LocalBusiness et Person
-- **Sitemap.xml** - Plan du site soumis à Google Search Console
-- **Robots.txt** - Configuration optimale des crawlers
-- **Open Graph** - Partage optimisé sur les réseaux sociaux
-- **Twitter Cards** - Prévisualisation optimisée pour Twitter
-
-## Sécurité
-
-- **Protection anti-spam** - Honeypot sur le formulaire de contact
-- **Validation des données** - Côté client et serveur
-- **HTTPS** - Chiffrement SSL/TLS via GitHub Pages
-- **Content Security Policy** - Protection contre les attaques XSS
-- **Sanitization** - Nettoyage des entrées utilisateur
-
-## Monitoring & Analytics
-
-- **Google Analytics 4** - Suivi des visiteurs en temps réel
-- **Google Search Console** - Monitoring de l'indexation et des performances SEO
-- **Métriques de performance** - Temps de chargement, Core Web Vitals
-
-## Qualité du Code
-
-- **TypeScript strict** - Typage complet pour éviter les erreurs
-- **ESLint** - Linting pour maintenir la qualité du code
-- **Architecture modulaire** - Code réutilisable et maintenable
-- **Documentation** - Code commenté et structure claire
-- **Best practices** - Respect des conventions Next.js et React
-
-## Compétences Démontrées
-
-Ce projet met en valeur :
-
-- **Développement Frontend Moderne** - Next.js, React, TypeScript
-- **Architecture & Design Patterns** - Composants modulaires, séparation des responsabilités
-- **SEO & Performance** - Optimisation pour les moteurs de recherche et les performances
-- **DevOps & CI/CD** - Automatisation du déploiement avec GitHub Actions
-- **Sécurité Web** - Protection contre les attaques courantes
-- **Accessibilité** - Respect des standards d'accessibilité web
-- **Responsive Design** - Adaptation à tous les appareils
-
-## Licence
-
-© 2025 PixelTech Antilles. Tous droits réservés.
-
-## Auteur
-
-**Benoit** - Expert en Administration Réseau & Système  
-PixelTech Antilles - Bouillante, Guadeloupe
+Événements trackés :
+- Pages vues (automatique)
+- Soumissions de formulaire (devis/contact)
 
 ---
 
-*Ce projet démontre une expertise en développement web moderne, architecture modulaire, et bonnes pratiques de l'industrie.*
+## 🚀 Déploiement
+
+### CI/CD Automatique
+
+Le site est déployé automatiquement via **GitHub Actions** à chaque push sur `main` :
+
+1. ✅ Installation des dépendances
+2. ✅ Build du site statique
+3. ✅ Génération du dossier `out/`
+4. ✅ Déploiement sur GitHub Pages
+5. ✅ Propagation sur pixeltech-antilles.com
+
+**Temps de déploiement** : ~2-3 minutes
+
+---
+
+## 🎨 Design & UX
+
+- **Thème sombre** - Interface professionnelle et moderne
+- **Responsive Design** - Mobile-first, adaptatif à tous les écrans
+- **Micro-interactions** - Animations subtiles pour une meilleure UX
+- **Accessibilité** - ARIA labels, navigation clavier, contraste optimisé
+- **Performance** - Score Lighthouse > 90/100
+
+---
+
+## 🔍 SEO & Référencement
+
+### Métadonnées
+
+✅ Toutes les pages ont :
+- Title unique optimisé
+- Meta description (150-160 caractères)
+- Keywords ciblés
+- URL canonique
+- OpenGraph complet
+- Twitter Cards
+
+### Données structurées (Schema.org)
+
+```json
+{
+  "@type": "LocalBusiness",
+  "name": "PixelTech Antilles",
+  "areaServed": ["Bouillante", "Guadeloupe"],
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "priceRange": "€€"
+}
+```
+
+### Optimisations
+
+- ✅ Sitemap.xml à jour
+- ✅ Robots.txt configuré
+- ✅ Images optimisées avec next/image
+- ✅ Liens internes cohérents
+- ✅ Temps de chargement < 2s
+
+---
+
+## 🔒 Sécurité
+
+- **Honeypot** - Protection anti-spam sur le formulaire
+- **Validation** - Côté client et serveur
+- **HTTPS** - SSL/TLS via GitHub Pages
+- **Sanitization** - Nettoyage des entrées utilisateur
+
+---
+
+## 📊 Qualité du Code
+
+- ✅ **0 erreur TypeScript**
+- ✅ **0 warning linter**
+- ✅ **Build de production réussi**
+- ✅ **Architecture modulaire**
+- ✅ **Types centralisés**
+- ✅ **Code mort supprimé**
+
+---
+
+## 🎯 Compétences Démontrées
+
+Ce projet met en valeur :
+
+- **Développement Frontend** - Next.js, React, TypeScript
+- **Architecture** - Composants modulaires, types partagés
+- **SEO & Performance** - Optimisation complète
+- **DevOps & CI/CD** - GitHub Actions, déploiement automatique
+- **Sécurité Web** - Protection formulaire, HTTPS
+- **Responsive Design** - Mobile-first, accessibilité
+
+---
+
+## 📝 Licence
+
+© 2025 PixelTech Antilles. Tous droits réservés.
+
+---
+
+## 👤 Auteur
+
+**Benoit Paterne**  
+Expert en Administration Réseau & Système  
+PixelTech Antilles - Bouillante, Guadeloupe
+
+📧 [contact@pixeltech-antilles.com](mailto:contact@pixeltech-antilles.com)  
+🌐 [https://pixeltech-antilles.com](https://pixeltech-antilles.com)
+
+---
+
+**Fait avec ❤️ en Guadeloupe**

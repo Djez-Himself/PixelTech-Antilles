@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -8,15 +9,23 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">PixelTech</h3>
+            <Link href="/" className="inline-block mb-4">
+              <Image 
+                src="/logos/logo.png" 
+                alt="PixelTech" 
+                width={120} 
+                height={36}
+                className="h-8 w-auto"
+              />
+            </Link>
             <p className="theme-footer-text">
-              Solutions informatiques professionnelles pour votre entreprise.
+              Solutions informatiques professionnelles pour votre entreprise en Guadeloupe.
             </p>
           </div>
           <div>
             <h4 className="font-semibold mb-4 theme-footer-title">Liens</h4>
             <ul className="space-y-2 theme-footer-text">
-              <li><Link href="/home" className="theme-footer-link">Accueil</Link></li>
+              <li><Link href="/" className="theme-footer-link">Accueil</Link></li>
               <li><Link href="/services" className="theme-footer-link">Services</Link></li>
               <li><Link href="/tarifs" className="theme-footer-link">Tarifs</Link></li>
               <li><Link href="/a-propos" className="theme-footer-link">À propos</Link></li>

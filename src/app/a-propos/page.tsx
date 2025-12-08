@@ -45,7 +45,7 @@ export default function APropos() {
                     <p className="text-xl text-primary mb-4">Expert en Administration Réseau & Système</p>
                     <p className="theme-text-secondary">
                       Basé à <strong className="text-primary">Bouillante, Guadeloupe</strong>, je vous accompagne dans la gestion et l'optimisation de votre infrastructure informatique. 
-                      Spécialisé en administration réseau, virtualisation, cloud et sécurité, je mets mon expertise au service des PME et particuliers.
+                      Spécialisé en administration réseau, virtualisation et sécurité, je mets mon expertise au service des PME et particuliers.
                     </p>
                   </div>
                 </div>
@@ -60,7 +60,7 @@ export default function APropos() {
                       <p className="font-semibold theme-text mb-2">Administration réseau & système</p>
                       <p className="theme-text-secondary text-sm">
                         Expérience en administration réseau et système, gestion d'infrastructures complexes, 
-                        virtualisation et cloud. Expertise acquise sur le terrain avec des environnements variés.
+                        virtualisation et solutions Microsoft. Expertise acquise sur le terrain avec des environnements variés.
                       </p>
                     </div>
                     <div>
@@ -114,8 +114,8 @@ export default function APropos() {
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <div>
-                        <p className="font-semibold theme-text">Linux & Cloud</p>
-                        <p className="theme-text-secondary text-sm">Administration Linux, migration cloud</p>
+                        <p className="font-semibold theme-text">Linux & Microsoft 365</p>
+                        <p className="theme-text-secondary text-sm">Administration Linux, migration vers Microsoft 365</p>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -260,6 +260,7 @@ export default function APropos() {
                 <Link 
                   href="/contact" 
                   className="inline-block theme-button enhanced-button px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
+                  aria-label="Me contacter pour discuter de vos besoins informatiques"
                 >
                   Me contacter
                 </Link>

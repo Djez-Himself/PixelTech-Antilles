@@ -3,7 +3,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
@@ -68,6 +68,16 @@ export default function Contact() {
         setStatus('success')
         form.reset()
         setRequestType('contact') // Réinitialiser le type
+        
+        // Tracking Google Analytics pour conversion
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'form_submit', {
+            event_category: 'Contact',
+            event_label: requestType === 'devis' ? 'Demande de devis' : 'Contact général',
+            value: 1
+          })
+        }
+        
         setTimeout(() => setStatus('idle'), 5000)
       } else {
         setStatus('error')

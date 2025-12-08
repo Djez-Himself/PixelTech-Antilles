@@ -9,6 +9,7 @@ export default function StructuredData() {
     description: 'PixelTech Antilles - Expert en administration réseau et système en Guadeloupe. Infogérance, support technique, dépannage informatique.',
     url: 'https://pixeltech-antilles.com',
     logo: 'https://pixeltech-antilles.com/logos/logo.png',
+    image: 'https://pixeltech-antilles.com/logos/logo.png',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Bouillante',
@@ -16,12 +17,24 @@ export default function StructuredData() {
       postalCode: '97125',
       addressCountry: 'FR',
     },
-    areaServed: {
-      '@type': 'City',
-      name: 'Bouillante',
-    },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Bouillante',
+      },
+      {
+        '@type': 'State',
+        name: 'Guadeloupe',
+      }
+    ],
     email: 'contact@pixeltech-antilles.com',
     priceRange: '€€',
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
     serviceArea: {
       '@type': 'GeoCircle',
       geoMidpoint: {

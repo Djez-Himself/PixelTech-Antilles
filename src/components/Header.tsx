@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Header() {
@@ -17,17 +18,18 @@ export default function Header() {
   return (
     <header className="theme-header shadow-sm sticky top-0 z-50 theme-border-bottom" role="banner">
       <nav className="container mx-auto px-4 py-4 flex justify-between items-center" role="navigation" aria-label="Navigation principale">
-        <Link href="/home" className="flex items-center gap-2" onClick={closeMenu}>
-          <img 
+        <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
+          <Image 
             src="/logos/logo.png" 
             alt="PixelTech - Administration réseau & Système en Guadeloupe" 
             width={150} 
             height={45}
             className="h-10 w-auto"
+            priority
           />
         </Link>
         <div className="hidden md:flex gap-6 items-center">
-          <Link href="/home" className="theme-nav-link">
+          <Link href="/" className="theme-nav-link">
             Accueil
           </Link>
           <Link href="/services" className="theme-nav-link">
@@ -39,7 +41,7 @@ export default function Header() {
           <Link href="/a-propos" className="theme-nav-link">
             À propos
           </Link>
-          <Link href="/contact" className="theme-nav-link">
+          <Link href="/contact" className="theme-nav-link theme-button px-4 py-2 rounded-lg">
             Contact
           </Link>
         </div>
@@ -67,7 +69,7 @@ export default function Header() {
         <div className="md:hidden border-t theme-border bg-black/95 backdrop-blur-lg">
           <div className="container mx-auto px-4 py-4 space-y-2">
             <Link 
-              href="/home" 
+              href="/"
               className="block theme-nav-link py-3 px-4 rounded-lg hover:bg-sky-500/10 transition-colors"
               onClick={closeMenu}
             >
