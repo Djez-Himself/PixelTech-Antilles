@@ -55,7 +55,7 @@ const forfaitsPME = [
   },
   {
     name: 'Infogérance / Pack Pro',
-    description: 'Supervision 24/7, sauvegarde, patch management, engagement de réponse sous 24h.',
+    description: 'Monitoring permanent des systèmes, sauvegarde, patch management, intervention rapide pendant les heures ouvrables.',
     price: '300–800 € / mois'
   }
 ]

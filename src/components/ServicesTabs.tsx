@@ -82,11 +82,11 @@ export default function ServicesTabs({ services }: { services: Service[] }) {
           <div className="theme-card-alt rounded-lg p-5 md:p-6 hover:border-primary/40 transition-all">
             <h4 className="font-semibold text-primary mb-2">Infogérance complète</h4>
             <p className="text-sm theme-text mb-3">
-              Surveillance 24/7 de votre infrastructure, maintenance préventive, interventions rapides en cas de problème. 
-              Vous avez un seul interlocuteur pour tout gérer. Monitoring avec Zabbix pour anticiper les pannes.
+              Monitoring permanent de votre infrastructure (outils actifs 24/7), maintenance préventive, intervention rapide pendant les heures ouvrables. 
+              Vous avez un seul interlocuteur pour tout gérer. Surveillance avec Zabbix pour anticiper les pannes.
             </p>
             <ul className="text-sm theme-text-secondary space-y-1">
-              <li>• Surveillance continue de vos serveurs et équipements réseau</li>
+              <li>• Monitoring permanent de vos serveurs et équipements réseau (alertes automatiques 24/7)</li>
               <li>• Alertes automatiques en cas d'anomalie</li>
               <li>• Maintenance préventive pour éviter les pannes</li>
               <li>• Reporting régulier de l'état de votre infrastructure</li>

@@ -86,7 +86,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 theme-text">Pour les entreprises</h3>
                 <p className="theme-text mb-6 text-base leading-relaxed">
-                  <strong>Administration réseau & système complète</strong> : infogérance, sécurité, monitoring 24/7.
+                  <strong>Administration réseau & système complète</strong> : infogérance, sécurité, monitoring permanent.
                   Je gère vos serveurs, votre réseau et vos sauvegardes au quotidien pour que vous restiez concentrés sur votre activité.
                 </p>
                 <div className="space-y-3 mb-6">

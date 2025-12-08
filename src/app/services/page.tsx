@@ -42,11 +42,11 @@ export default function Services() {
         {
           name: 'Infogérance / Pack Pro',
           price: '300–800 € / mois',
-          detail: 'Supervision 24/7, sauvegarde, patch management, engagement de réponse sous 24h.'
+          detail: 'Monitoring permanent des systèmes, sauvegarde, patch management, intervention rapide pendant les heures ouvrables.'
         }
       ],
       features: [
-        'Infogérance & maintenance informatique 24/7',
+        'Infogérance & maintenance informatique réactive',
         'Configuration serveurs Linux/Windows Server',
         'Virtualisation (VMware, Proxmox) - économie d\'énergie',
         'Sécurité informatique & protection contre les cybermenaces',
