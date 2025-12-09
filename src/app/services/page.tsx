@@ -273,14 +273,10 @@ export default function Services() {
 
             <div className="mt-12 theme-card rounded-xl p-8 border-2 border-primary/20">
               <h3 className="text-2xl font-bold mb-4 text-primary text-center">Options & extras</h3>
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 <div className="theme-card-alt rounded-lg p-4">
                   <h4 className="font-semibold text-primary mb-2">Déplacement</h4>
                   <p className="text-sm theme-text-secondary">Gratuit jusqu&apos;à une zone proche, puis 15–30 € au-delà (selon distance).</p>
-                </div>
-                <div className="theme-card-alt rounded-lg p-4">
-                  <h4 className="font-semibold text-primary mb-2">Pièces & licences</h4>
-                  <p className="text-sm theme-text-secondary">Facturation au coût réel + marge fixe (10–20%). Matériel non inclus dans les forfaits.</p>
                 </div>
                 <div className="theme-card-alt rounded-lg p-4">
                   <h4 className="font-semibold text-primary mb-2">Hors horaires</h4>
