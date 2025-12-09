@@ -3,13 +3,14 @@ import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
 import FeatureList from '@/components/FeatureList'
 import ServicesTabs from '@/components/ServicesTabs'
+import Breadcrumb from '@/components/Breadcrumb'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import type { Service } from '@/types/services'
 
 export const metadata: Metadata = {
   title: 'Services - PixelTech | Administration réseau & Support technique en Guadeloupe',
-  description: 'PixelTech Antilles - Services d\'infogérance, administration réseau, support technique et dépannage informatique pour PME et particuliers. Bouillante, Guadeloupe. Solutions open source professionnelles.',
+  description: 'Services informatiques professionnels en Guadeloupe : infogérance PME, administration réseau, support technique et dépannage pour particuliers. Monitoring Zabbix, virtualisation, sécurité. Basé à Bouillante, intervention rapide.',
   keywords: 'PixelTech, PixelTech Antilles, Pixeltech, Pixeltech Antilles, infogérance, administration réseau, support technique, dépannage informatique, Guadeloupe, Bouillante, virtualisation, monitoring, Zabbix, GLPI',
   alternates: {
     canonical: '/services',
@@ -26,13 +27,13 @@ export default function Services() {
     {
       title: 'Administration réseau & système',
       subtitle: 'Pour les PME et entreprises',
-      description: 'Je prends en charge la gestion complète de votre infrastructure réseau pour que vous puissiez vous concentrer sur votre activité. Infogérance, sécurité, virtualisation. Je m\'adapte à vos logiciels existants ou vous propose les solutions les plus adaptées à vos besoins et votre budget.',
+      description: 'Je gère votre infrastructure informatique au quotidien : serveurs, réseau, sécurité. Vous vous concentrez sur votre activité. Je m\'adapte à vos logiciels existants ou vous recommande les meilleures solutions selon vos besoins et votre budget.',
       icon: 'building',
       packages: [
         {
           name: 'Intervention ponctuelle (4h)',
           price: '280–350 € TTC (dégressif selon volume)',
-          detail: 'Idéal pour une mise au propre ou une action ciblée.'
+          detail: 'Idéal pour un diagnostic, une configuration ou une résolution de problème ciblée.'
         },
         {
           name: 'Maintenance mensuelle (Pack TPE)',
@@ -73,7 +74,7 @@ export default function Services() {
         {
           name: 'Diagnostic & remise en route',
           price: '40 € sur place • 30 € en télé-assistance',
-          detail: '1h d’intervention + diagnostic + nettoyage rapide + conseils.'
+          detail: '1h d\'intervention + diagnostic + nettoyage rapide + conseils.'
         },
         {
           name: 'Forfait Sécurité / Nettoyage',
@@ -86,9 +87,9 @@ export default function Services() {
           detail: 'Pour les petits dépannages rapides à distance.'
         },
         {
-          name: 'Pack Senior / Formation',
+          name: 'Cours d\'informatique à domicile',
           price: '35–50 €',
-          detail: '1h de cours + prise en main smartphone/ordinateur (crédit d’impôt possible).'
+          detail: '1h de formation personnalisée : smartphone, ordinateur, logiciels. Crédit d\'impôt 50%.'
         }
       ],
       features: [
@@ -122,10 +123,17 @@ export default function Services() {
 
         <section className="section-padding">
           <div className="container mx-auto px-4">
+            <Breadcrumb items={[
+              { label: 'Accueil', href: '/' },
+              { label: 'Services' }
+            ]} />
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 theme-text">Nos services en détail</h2>
-              <p className="text-lg theme-text-secondary max-w-2xl mx-auto">
+              <p className="text-lg theme-text-secondary max-w-2xl mx-auto mb-4">
                 Des solutions adaptées à chaque besoin, particuliers ou entreprises
+              </p>
+              <p className="text-sm theme-text-secondary">
+                💰 <Link href="/tarifs" className="text-primary hover:underline font-medium">Consultez nos tarifs transparents</Link> pour connaître les prix de nos prestations
               </p>
             </div>
 
@@ -134,8 +142,7 @@ export default function Services() {
             <div className="mt-16 bg-gradient-to-r from-primary to-primary-dark rounded-xl p-10 text-white text-center">
               <h3 className="text-3xl font-bold mb-4">Services à venir</h3>
               <p className="text-white/90 mb-8 text-lg max-w-2xl mx-auto">
-                Formations (informatique générale, IA, développement) et développement d'agents IA 
-                pour automatiser vos tâches répétitives et chronophages.
+                Formations informatiques et solutions d'automatisation pour gagner du temps sur vos tâches répétitives.
               </p>
               <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8">
                 <div className="bg-white/10 rounded-lg p-6 backdrop-blur">
@@ -164,8 +171,8 @@ export default function Services() {
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold mb-3 text-primary">Technologies & Outils</h3>
                 <p className="text-sm theme-text-secondary max-w-2xl mx-auto">
-                  Je m'adapte à vos logiciels existants ou vous propose les meilleures solutions.
-                  Indépendant et multi-marques, avec une préférence pour l'open source.
+                  Je m'adapte à vos logiciels existants ou vous recommande les meilleures solutions.
+                  Indépendant, je privilégie l'open source pour réduire vos coûts.
                 </p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-6">
@@ -264,7 +271,7 @@ export default function Services() {
               </div>
             </div>
 
-            <div className="mt-12 theme-card rounded-xl p-8 border-2 border-primary/20 bg-white/50">
+            <div className="mt-12 theme-card rounded-xl p-8 border-2 border-primary/20">
               <h3 className="text-2xl font-bold mb-4 text-primary text-center">Options & extras</h3>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="theme-card-alt rounded-lg p-4">
@@ -336,4 +343,3 @@ export default function Services() {
     </>
   )
 }
-

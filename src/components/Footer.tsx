@@ -12,10 +12,11 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-4">
               <Image 
                 src="/logos/logo.png" 
-                alt="PixelTech" 
+                alt="PixelTech Antilles - Administration réseau et système en Guadeloupe" 
                 width={120} 
                 height={36}
                 className="h-8 w-auto"
+                loading="lazy"
               />
             </Link>
             <p className="theme-footer-text">

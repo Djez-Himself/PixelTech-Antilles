@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
+import Breadcrumb from '@/components/Breadcrumb'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -31,6 +32,10 @@ export default function APropos() {
 
         <section className="section-padding">
           <div className="container mx-auto px-4">
+            <Breadcrumb items={[
+              { label: 'Accueil', href: '/' },
+              { label: 'À propos' }
+            ]} />
             <div className="max-w-4xl mx-auto">
               {/* Présentation personnelle */}
               <div className="theme-card card-elevated rounded-xl p-8 md:p-10 mb-16 border-2 border-primary/20">
@@ -185,15 +190,13 @@ export default function APropos() {
                     <div className="bg-white/10 rounded-lg p-6 backdrop-blur border border-white/20">
                       <h4 className="font-bold text-lg mb-3">Innovation</h4>
                       <p className="text-white/90 text-sm">
-                        J'investis dans les technologies d'avenir, comme l'IA (Pixel/PixelAgent), pour améliorer continuellement 
-                        la qualité de service et la réactivité.
+                        Je me forme continuellement aux nouvelles technologies pour vous offrir des solutions modernes et efficaces.
                       </p>
                     </div>
                     <div className="bg-white/10 rounded-lg p-6 backdrop-blur border border-white/20">
                       <h4 className="font-bold text-lg mb-3">Évolution</h4>
                       <p className="text-white/90 text-sm">
-                        Je développe des solutions de formation et d'automatisation pour accompagner les entreprises guadeloupéennes 
-                        dans leur transformation numérique.
+                        Je propose des formations et des outils pour aider les entreprises guadeloupéennes à mieux utiliser l'informatique.
                       </p>
                     </div>
                   </div>

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import StructuredData from '@/components/StructuredData'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import FloatingContactButton from '@/components/FloatingContactButton'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -92,6 +93,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <StructuredData />
         {children}
+        <FloatingContactButton />
       </body>
     </html>
   )

@@ -1,25 +1,35 @@
 # Dependencies
-/node_modules
-/.pnp
+node_modules/
+.pnp
 .pnp.js
-package-lock.json
 
 # Testing
-/coverage
+coverage/
+*.test.ts
+*.test.tsx
+*.test.js
+*.test.jsx
+*.spec.ts
+*.spec.tsx
+*.spec.js
+*.spec.jsx
+__tests__/
+__mocks__/
+jest.config.*
+vitest.config.*
 
 # Next.js
-/.next/
-/out/
+.next/
+out/
+dist/
+build/
 
-# Production
-/build
+# Production build
+.vercel
 
-# Misc
-.DS_Store
-*.pem
-*.key
-*.cert
-*.crt
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
 
 # Debug
 npm-debug.log*
@@ -36,25 +46,22 @@ lerna-debug.log*
 .env.test.local
 .env.production.local
 
-# Vercel
-.vercel
-
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
-
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+*.sublime-project
+*.sublime-workspace
 
 # OS
+.DS_Store
 Thumbs.db
+desktop.ini
 
 # Logs
-logs
+logs/
 *.log
 
 # Sensitive data
@@ -63,6 +70,23 @@ logs
 secrets/
 .secrets/
 
-# Documentation de travail (privée)
-/docs/
-/website/
+# Documentation de travail (privée) - NE PAS PUSHER
+docs/
+
+# Dossier website interne (doublon) - NE PAS PUSHER
+website/
+
+# Scripts de développement
+scripts/
+dev/
+test/
+tests/
+*.dev.*
+*.dev.js
+*.dev.ts
+
+# Fichiers temporaires
+*.tmp
+*.temp
+.cache/
+.temp/

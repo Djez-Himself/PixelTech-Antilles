@@ -3,24 +3,147 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
-import { useState } from 'react'
+import Breadcrumb from '@/components/Breadcrumb'
+import { useState, useEffect } from 'react'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
+
+type FieldErrors = {
+  name?: string
+  email?: string
+  subject?: string
+  message?: string
+}
 
 export default function Contact() {
   const [requestType, setRequestType] = useState<'contact' | 'devis'>('contact')
   const [status, setStatus] = useState<FormStatus>('idle')
   const [errorMessage, setErrorMessage] = useState<string>('')
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
+  const [messageLength, setMessageLength] = useState<number>(0)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
 
+
+  const validateField = (name: string, value: string): string | undefined => {
+    switch (name) {
+      case 'name':
+        if (!value.trim()) return 'Le nom est requis'
+        if (value.trim().length < 2) return 'Le nom doit contenir au moins 2 caractères'
+        return undefined
+      case 'email':
+        if (!value.trim()) return 'L\'email est requis'
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        if (!emailRegex.test(value)) return 'Format d\'email invalide'
+        return undefined
+      case 'subject':
+        if (!value.trim()) return 'Le sujet est requis'
+        if (value.trim().length < 3) return 'Le sujet doit contenir au moins 3 caractères'
+        return undefined
+      case 'message':
+        if (!value.trim()) return 'Le message est requis'
+        if (value.trim().length < 10) return 'Le message doit contenir au moins 10 caractères'
+        return undefined
+      default:
+        return undefined
+    }
+  }
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    const error = validateField(name, value)
+    setFieldErrors(prev => ({ ...prev, [name]: error }))
+  }
+
+  // Charger le brouillon depuis localStorage au montage
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('contactFormDraft')
+      if (saved) {
+        try {
+          const draft = JSON.parse(saved)
+          setFormData(draft)
+          setMessageLength(draft.message?.length || 0)
+        } catch (e) {
+          // Ignorer les erreurs de parsing
+        }
+      }
+    }
+  }, [])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    
+    // Mettre à jour le state local
+    setFormData(prev => ({ ...prev, [name]: value }))
+    
+    // Sauvegarder dans localStorage
+    if (typeof window !== 'undefined') {
+      const newData = { ...formData, [name]: value }
+      localStorage.setItem('contactFormDraft', JSON.stringify(newData))
+    }
+    
+    // Compteur de caractères pour le message
+    if (name === 'message') {
+      setMessageLength(value.length)
+    }
+    
+    // Effacer l'erreur si le champ est corrigé
+    if (fieldErrors[name as keyof FieldErrors]) {
+      const error = validateField(name, value)
+      setFieldErrors(prev => ({ ...prev, [name]: error }))
+    }
+  }
+
+  // Suggestions de sujets selon le type de demande
+  const getSubjectSuggestions = (): string[] => {
+    if (requestType === 'devis') {
+      return [
+        'Devis pour maintenance informatique',
+        'Devis pour infogérance PME',
+        'Devis pour dépannage urgent',
+        'Devis pour formation informatique',
+        'Devis pour intervention sur site'
+      ]
+    }
+    return [
+      'Question sur vos services',
+      'Demande d\'information',
+      'Problème technique',
+      'Demande de conseil',
+      'Autre demande'
+    ]
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStatus('loading')
     setErrorMessage('')
+    setFieldErrors({})
 
     const form = e.currentTarget
     const formData = new FormData(form)
     const data = Object.fromEntries(formData.entries())
+
+    // Validation de tous les champs
+    const errors: FieldErrors = {}
+    Object.keys(data).forEach(key => {
+      if (key !== 'website' && key !== 'requestType') {
+        const error = validateField(key, data[key] as string)
+        if (error) errors[key as keyof FieldErrors] = error
+      }
+    })
+
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors)
+      setStatus('error')
+      setErrorMessage('Veuillez corriger les erreurs dans le formulaire')
+      return
+    }
     
     // Protection honeypot : si le champ caché est rempli, c'est un bot
     const honeypot = formData.get('website') as string
@@ -68,6 +191,13 @@ export default function Contact() {
         setStatus('success')
         form.reset()
         setRequestType('contact') // Réinitialiser le type
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setMessageLength(0)
+        
+        // Nettoyer le brouillon sauvegardé
+        if (typeof window !== 'undefined') {
+          localStorage.removeItem('contactFormDraft')
+        }
         
         // Tracking Google Analytics pour conversion
         if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -101,6 +231,10 @@ export default function Contact() {
 
         <section className="section-padding">
           <div className="container mx-auto px-4 max-w-2xl">
+            <Breadcrumb items={[
+              { label: 'Accueil', href: '/' },
+              { label: 'Contact' }
+            ]} />
             <div className="theme-card card-elevated rounded-lg p-8 md:p-10 shadow-sm">
               <form className="space-y-6" onSubmit={handleSubmit}>
                 {/* Honeypot : champ caché pour détecter les bots */}
@@ -146,8 +280,23 @@ export default function Contact() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-2 theme-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent theme-bg theme-text"
+                    value={formData.name}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    placeholder="Votre nom complet"
+                    autoComplete="name"
+                    className={`w-full px-4 py-2 theme-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent theme-bg theme-text transition-colors ${
+                      fieldErrors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''
+                    }`}
                   />
+                  {fieldErrors.name && (
+                    <p className="text-red-400 text-xs mt-1 flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {fieldErrors.name}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -159,34 +308,99 @@ export default function Contact() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-2 theme-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent theme-bg theme-text"
+                    value={formData.email}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    placeholder="votre.email@exemple.com"
+                    autoComplete="email"
+                    className={`w-full px-4 py-2 theme-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent theme-bg theme-text transition-colors ${
+                      fieldErrors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''
+                    }`}
                   />
+                  {fieldErrors.email && (
+                    <p className="text-red-400 text-xs mt-1 flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {fieldErrors.email}
+                    </p>
+                  )}
                 </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium theme-text mb-2">
                     Sujet *
                   </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    className="w-full px-4 py-2 theme-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent theme-bg theme-text"
-                  />
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      required
+                      value={formData.subject}
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      placeholder={requestType === 'devis' ? 'Ex: Devis pour maintenance informatique' : 'Ex: Question sur vos services'}
+                      list="subject-suggestions"
+                      className={`w-full px-4 py-2 theme-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent theme-bg theme-text transition-colors ${
+                        fieldErrors.subject ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''
+                      }`}
+                    />
+                    <datalist id="subject-suggestions">
+                      {getSubjectSuggestions().map((suggestion, index) => (
+                        <option key={index} value={suggestion} />
+                      ))}
+                    </datalist>
+                  </div>
+                  {fieldErrors.subject && (
+                    <p className="text-red-400 text-xs mt-1 flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {fieldErrors.subject}
+                    </p>
+                  )}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium theme-text mb-2">
-                    Message *
-                  </label>
+                  <div className="flex items-center justify-between mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium theme-text">
+                      Message *
+                    </label>
+                    <span className={`text-xs transition-colors ${
+                      messageLength < 10 
+                        ? 'text-red-400' 
+                        : messageLength > 1000 
+                        ? 'text-yellow-400' 
+                        : 'theme-text-secondary'
+                    }`}>
+                      {messageLength} / 1000 caractères
+                    </span>
+                  </div>
                   <textarea
                     id="message"
                     name="message"
                     rows={6}
                     required
-                    className="w-full px-4 py-2 theme-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent theme-bg theme-text"
+                    value={formData.message}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    placeholder={requestType === 'devis' 
+                      ? 'Décrivez votre projet, vos besoins et vos contraintes. Plus de détails = devis plus précis !' 
+                      : 'Décrivez votre demande ou votre question. Je vous répondrai dans les plus brefs délais.'}
+                    maxLength={1000}
+                    className={`w-full px-4 py-2 theme-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent theme-bg theme-text transition-colors resize-y ${
+                      fieldErrors.message ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''
+                    }`}
                   ></textarea>
+                  {fieldErrors.message && (
+                    <p className="text-red-400 text-xs mt-1 flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {fieldErrors.message}
+                    </p>
+                  )}
                 </div>
 
                 <button
@@ -209,25 +423,41 @@ export default function Contact() {
                 </button>
               </form>
 
-              {/* Messages de statut */}
+              {/* Messages de statut avec aria-live pour l'accessibilité */}
+              <div aria-live="polite" aria-atomic="true" className="sr-only">
+                {status === 'success' && 'Message envoyé avec succès'}
+                {status === 'error' && `Erreur: ${errorMessage}`}
+                {status === 'loading' && 'Envoi en cours'}
+              </div>
+              
               {status === 'success' && (
-                <div className="mt-4 p-4 bg-green-500/20 border-2 border-green-500/40 rounded-lg">
-                  <p className="text-green-400 text-sm text-center">
-                    ✓ Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.
+                <div className="mt-4 p-4 bg-green-500/20 border-2 border-green-500/40 rounded-lg animate-fade-in">
+                  <p className="text-green-400 text-sm text-center flex items-center justify-center gap-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.
                   </p>
                 </div>
               )}
               {status === 'error' && errorMessage && (
-                <div className="mt-4 p-4 bg-red-500/20 border-2 border-red-500/40 rounded-lg">
-                  <p className="text-red-400 text-sm text-center">
-                    ✗ {errorMessage}
+                <div className="mt-4 p-4 bg-red-500/20 border-2 border-red-500/40 rounded-lg animate-fade-in">
+                  <p className="text-red-400 text-sm text-center flex items-center justify-center gap-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {errorMessage}
                   </p>
                 </div>
               )}
               {status === 'loading' && (
                 <div className="mt-4 p-4 bg-sky-500/20 border-2 border-sky-500/40 rounded-lg">
-                  <p className="text-sky-400 text-sm text-center">
-                    ⏳ Envoi de votre message en cours...
+                  <p className="text-sky-400 text-sm text-center flex items-center justify-center gap-2">
+                    <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Envoi de votre message en cours...
                   </p>
                 </div>
               )}

@@ -43,8 +43,8 @@ export default function Home() {
             </div>
             <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-                <strong>PixelTech Antilles</strong> - Votre partenaire informatique de confiance.
-                Administration réseau, support technique, dépannage. Réactivité et solutions adaptées.
+                <strong>PixelTech Antilles</strong> - Solutions informatiques complètes pour PME et particuliers en Guadeloupe. 
+                Intervention rapide, tarifs transparents, service de qualité.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
@@ -71,8 +71,12 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 theme-text">Nos services</h2>
-              <p className="text-lg theme-text-secondary max-w-2xl mx-auto">
+              <p className="text-lg theme-text-secondary max-w-2xl mx-auto mb-4">
                 Deux solutions adaptées à vos besoins : particuliers ou entreprises
+              </p>
+              <p className="text-sm theme-text-secondary">
+                📋 <Link href="/services" className="text-primary hover:underline font-medium">Voir tous nos services en détail</Link> • 
+                💰 <Link href="/tarifs" className="text-primary hover:underline font-medium ml-2">Consulter nos tarifs</Link>
               </p>
             </div>
         
@@ -87,13 +91,13 @@ export default function Home() {
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 theme-text">Pour les entreprises</h3>
                 <p className="theme-text mb-6 text-base leading-relaxed">
                   <strong>Administration réseau & système complète</strong> : infogérance, sécurité, monitoring permanent.
-                  Je gère vos serveurs, votre réseau et vos sauvegardes au quotidien pour que vous restiez concentrés sur votre activité.
+                  Je gère votre infrastructure informatique : serveurs, réseau, sauvegardes. Vous choisissez la formule adaptée à vos besoins.
                 </p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center justify-center">
                     <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">PME & Entreprises</span>
                   </div>
-                  <p className="text-sm theme-text-secondary">Réponse sous 24h • Intervention rapide • Solutions sur mesure</p>
+                  <p className="text-sm theme-text-secondary">Réponse sous 24h • Devis gratuit • Intervention locale</p>
                 </div>
                 <Link 
                   href="/services#pme"
@@ -138,8 +142,8 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
                   <h4 className="font-bold mb-2">Réactivité</h4>
@@ -147,8 +151,8 @@ export default function Home() {
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
                   <h4 className="font-bold mb-2">Transparence</h4>
@@ -156,8 +160,9 @@ export default function Home() {
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
                   <h4 className="font-bold mb-2">Expertise locale</h4>

@@ -2,12 +2,13 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
 import TarifsTabs from '@/components/TarifsTabs'
+import Breadcrumb from '@/components/Breadcrumb'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Tarifs - PixelTech | Tarification transparente pour services IT en Guadeloupe',
-  description: 'PixelTech Antilles - Tarifs transparents pour dépannage informatique, administration réseau et support technique. Dépannage à distance 40€/h, sur site 50€/h. Bouillante, Guadeloupe.',
+  description: 'Tarifs transparents pour services IT en Guadeloupe : dépannage informatique (30-90€), administration réseau PME (80-800€/mois), support technique. Devis gratuit, forfaits adaptés. Bouillante.',
   keywords: 'PixelTech, PixelTech Antilles, Pixeltech, tarifs informatique, prix dépannage, tarifs support technique, devis informatique, Guadeloupe, Bouillante',
   alternates: {
     canonical: '/tarifs',
@@ -36,8 +37,8 @@ const forfaitsParticuliers = [
     price: '20–30 €'
   },
   {
-    name: 'Pack Senior / Formation',
-    description: '1h de cours + prise en main smartphone/ordinateur.',
+    name: 'Cours d\'informatique à domicile',
+    description: '1h de formation personnalisée : smartphone, ordinateur, logiciels. Crédit d\'impôt 50%.',
     price: '35–50 €'
   }
 ]
@@ -73,27 +74,29 @@ export default function Tarifs() {
 
         <section className="section-padding">
           <div className="container mx-auto px-4">
+            <Breadcrumb items={[
+              { label: 'Accueil', href: '/' },
+              { label: 'Tarifs' }
+            ]} />
             <div className="max-w-4xl mx-auto mb-16">
               <div className="theme-card rounded-xl p-6 md:p-8 border-2 border-primary/30 mb-8">
                 <p className="theme-text text-center text-base font-semibold mb-2">
                   ⚠️ Tarifs indicatifs
                 </p>
                 <p className="theme-text-secondary text-center text-sm">
-                  Les tarifs ci-dessous sont donnés à titre indicatif pour vous donner une idée des prix. 
-                  Le prix final peut varier selon la complexité de l'intervention, la durée réelle, 
-                  et les spécificités de votre demande. <strong className="text-primary">Un devis gratuit</strong> sera établi 
-                  pour chaque demande afin de vous proposer un tarif précis et adapté.
+                  Les tarifs affichés sont donnés à titre indicatif. 
+                  <strong className="text-primary"> Un devis gratuit</strong> sera établi pour vous proposer un tarif précis adapté à vos besoins.
                 </p>
               </div>
               <div className="theme-card-alt rounded-xl p-4 border-2 border-primary/20 mb-4">
                 <p className="theme-text-secondary text-center text-sm">
-                  <strong className="text-primary">Important</strong> : Les tarifs horaires indiqués sont dilués dans le prix final suivant l'intervention. 
-                  Je ne travaille pas avec un chronomètre. Le prix final est un forfait adapté à votre demande, 
-                  pas un calcul basé sur le temps réel passé.
+                  <strong className="text-primary">Je travaille au forfait</strong>, pas à l'heure. 
+                  Le prix est fixé à l'avance selon votre demande, pas selon le temps réel passé.
                 </p>
               </div>
               <p className="theme-text-secondary text-center text-sm">
-                💡 <strong>Astuce</strong> : Le dépannage à distance permet d'économiser les frais de déplacement !
+                💡 <strong>Astuce</strong> : Le dépannage à distance permet d'économiser les frais de déplacement ! 
+                <Link href="/services" className="text-primary hover:underline font-medium ml-1">Découvrez tous nos services</Link>
               </p>
             </div>
 
