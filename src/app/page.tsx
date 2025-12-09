@@ -75,8 +75,8 @@ export default function Home() {
                 Deux solutions adaptées à vos besoins : particuliers ou entreprises
               </p>
               <p className="text-sm theme-text-secondary">
-                📋 <Link href="/services" className="text-primary hover:underline font-medium">Voir tous nos services en détail</Link> • 
-                💰 <Link href="/tarifs" className="text-primary hover:underline font-medium ml-2">Consulter nos tarifs</Link>
+                <Link href="/services" className="text-primary hover:underline font-medium">Voir tous nos services en détail</Link> • 
+                <Link href="/tarifs" className="text-primary hover:underline font-medium ml-2">Consulter nos tarifs</Link>
               </p>
             </div>
         

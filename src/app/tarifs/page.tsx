@@ -81,7 +81,7 @@ export default function Tarifs() {
             <div className="max-w-4xl mx-auto mb-16">
               <div className="theme-card rounded-xl p-6 md:p-8 border-2 border-primary/30 mb-8">
                 <p className="theme-text text-center text-base font-semibold mb-2">
-                  ⚠️ Tarifs indicatifs
+                  Tarifs indicatifs
                 </p>
                 <p className="theme-text-secondary text-center text-sm">
                   Les tarifs affichés sont donnés à titre indicatif. 
@@ -95,7 +95,7 @@ export default function Tarifs() {
                 </p>
               </div>
               <p className="theme-text-secondary text-center text-sm">
-                💡 <strong>Astuce</strong> : Le dépannage à distance permet d'économiser les frais de déplacement ! 
+                <strong>Astuce</strong> : Le dépannage à distance permet d'économiser les frais de déplacement ! 
                 <Link href="/services" className="text-primary hover:underline font-medium ml-1">Découvrez tous nos services</Link>
               </p>
             </div>

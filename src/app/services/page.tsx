@@ -133,7 +133,7 @@ export default function Services() {
                 Des solutions adaptées à chaque besoin, particuliers ou entreprises
               </p>
               <p className="text-sm theme-text-secondary">
-                💰 <Link href="/tarifs" className="text-primary hover:underline font-medium">Consultez nos tarifs transparents</Link> pour connaître les prix de nos prestations
+                <Link href="/tarifs" className="text-primary hover:underline font-medium">Consultez nos tarifs transparents</Link> pour connaître les prix de nos prestations
               </p>
             </div>
 
@@ -323,7 +323,7 @@ export default function Services() {
                 </div>
                 <div className="theme-card rounded-lg p-6 bg-primary/5 border border-primary/20">
                   <p className="theme-text text-center mb-3">
-                    <strong className="text-primary">📍 Basé à Bouillante</strong>, je privilégie les interventions dans ma zone principale pour une meilleure réactivité.
+                    <strong className="text-primary">Basé à Bouillante</strong>, je privilégie les interventions dans ma zone principale pour une meilleure réactivité.
                   </p>
                   <p className="theme-text-secondary text-sm text-center">
                     Pour les dépannages sur site, la zone principale (Bouillante et environs) permet une intervention rapide avec des frais de déplacement réduits. 

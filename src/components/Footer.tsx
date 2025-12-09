@@ -36,7 +36,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 theme-footer-title">Contact</h4>
             <ul className="space-y-2 theme-footer-text">
-              <li>📍 Bouillante, Guadeloupe (971)</li>
+              <li>Bouillante, Guadeloupe (971)</li>
               <li>Zone principale : Bouillante et environs</li>
               <li className="pt-2">
                 <a href="mailto:contact@pixeltech-antilles.com" className="theme-footer-link underline block">

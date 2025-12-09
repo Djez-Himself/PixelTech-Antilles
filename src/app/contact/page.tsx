@@ -535,7 +535,7 @@ export default function Contact() {
                     <h4 className="font-semibold text-primary">Zone d'intervention</h4>
                   </div>
                   <p className="theme-text-secondary text-sm mb-2">
-                    <strong className="text-primary">📍 Zone principale :</strong> Bouillante et ses environs
+                    <strong className="text-primary">Zone principale :</strong> Bouillante et ses environs
                   </p>
                   <p className="theme-text-secondary text-sm mb-2">
                     <strong className="text-primary">Zone étendue :</strong> Basse-Terre et communes proches
