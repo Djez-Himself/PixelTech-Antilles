@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import TrackedLink from '@/components/TrackedLink'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -48,20 +49,24 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              <Link
+              <TrackedLink
                 href="/contact"
                 className="inline-block theme-button enhanced-button px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
-                aria-label="Demander un devis gratuit pour vos besoins informatiques"
+                ariaLabel="Demander un devis gratuit pour vos besoins informatiques"
+                ctaName="Demander un devis gratuit"
+                location="Hero Section"
               >
                 Demander un devis gratuit
-              </Link>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href="/services"
                 className="inline-block bg-transparent border-2 border-sky-400/50 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-sky-400/10 hover:border-sky-400 transition-all duration-300"
-                aria-label="Découvrir nos services informatiques"
+                ariaLabel="Découvrir nos services informatiques"
+                ctaName="Nos services"
+                location="Hero Section"
               >
                 Nos services
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </section>
@@ -181,20 +186,24 @@ export default function Home() {
               Contactez-moi pour un devis gratuit et sans engagement. Réponse rapide garantie.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
+              <TrackedLink
                 href="/contact"
                 className="inline-block theme-button enhanced-button px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg shadow-primary/30"
-                aria-label="Demander un devis gratuit"
+                ariaLabel="Demander un devis gratuit"
+                ctaName="Demander un devis gratuit"
+                location="CTA Section"
               >
                 Demander un devis gratuit
-              </Link>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href="/tarifs"
                 className="inline-block theme-button enhanced-button px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg shadow-primary/30"
-                aria-label="Consulter nos tarifs"
+                ariaLabel="Consulter nos tarifs"
+                ctaName="Voir les tarifs"
+                location="CTA Section"
               >
                 Voir les tarifs
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </section>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { trackCTA } from '@/lib/analytics'
 
 export default function FloatingContactButton() {
   const [isVisible, setIsVisible] = useState(false)
@@ -20,9 +21,14 @@ export default function FloatingContactButton() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleClick = () => {
+    trackCTA('Contact flottant', 'Floating Button')
+  }
+
   return (
     <Link
       href="/contact"
+      onClick={handleClick}
       className={`fixed bottom-6 right-6 z-50 bg-primary text-white p-4 rounded-full shadow-2xl shadow-primary/50 hover:bg-primary-dark transition-all duration-300 flex items-center gap-2 group ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
       } md:hidden`}
