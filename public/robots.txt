@@ -1,5 +1,47 @@
+# robots.txt pour pixeltech-antilles.com
+# Configuration optimisée pour le référencement
+
+# Règles pour tous les bots
 User-agent: *
 Allow: /
+Disallow: /home
+Disallow: /construction
+Disallow: /en-construction
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+
+# Règles spécifiques pour Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /home
+Disallow: /construction
+Disallow: /en-construction
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Règles pour Googlebot-Image (pour les images)
+User-agent: Googlebot-Image
+Allow: /logos/
+Allow: /favicon*
+Disallow: /
+
+# Règles pour Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /home
+Disallow: /construction
+Disallow: /en-construction
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Crawl-delay (optionnel, pour éviter de surcharger le serveur)
+# User-agent: *
+# Crawl-delay: 1
 
 # Sitemap
 Sitemap: https://pixeltech-antilles.com/sitemap.xml
