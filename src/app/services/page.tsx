@@ -6,18 +6,19 @@ import ServicesTabs from '@/components/ServicesTabs'
 import Breadcrumb from '@/components/Breadcrumb'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { SITE_PAUSED } from '@/lib/site-mode'
 import type { Service } from '@/types/services'
 
 export const metadata: Metadata = {
-  title: 'Services - PixelTech | Administration réseau & Support technique en Guadeloupe',
-  description: 'Services informatiques professionnels en Guadeloupe : infogérance PME, administration réseau, support technique et dépannage pour particuliers. Monitoring Zabbix, virtualisation, sécurité. Basé à Bouillante, intervention rapide.',
+  title: SITE_PAUSED ? 'PixelTech Antilles – Activité temporairement suspendue' : 'Services - PixelTech | Administration réseau & Support technique en Guadeloupe',
+  description: SITE_PAUSED ? 'PixelTech Antilles suspend temporairement ses activités. Merci pour votre confiance. Nous espérons vous retrouver prochainement.' : 'Services informatiques professionnels en Guadeloupe : infogérance PME, administration réseau, support technique et dépannage pour particuliers. Monitoring Zabbix, virtualisation, sécurité. Basé à Bouillante, intervention rapide.',
   keywords: 'PixelTech, PixelTech Antilles, Pixeltech, Pixeltech Antilles, infogérance, administration réseau, support technique, dépannage informatique, Guadeloupe, Bouillante, virtualisation, monitoring, Zabbix, GLPI',
   alternates: {
     canonical: '/services',
   },
   openGraph: {
-    title: 'Services - PixelTech | Administration réseau & Support technique',
-    description: 'Infogérance, administration réseau, support technique et dépannage informatique pour PME et particuliers. Bouillante, Guadeloupe.',
+    title: SITE_PAUSED ? 'PixelTech Antilles – Activité temporairement suspendue' : 'Services - PixelTech | Administration réseau & Support technique',
+    description: SITE_PAUSED ? 'PixelTech Antilles suspend temporairement ses activités. Merci pour votre confiance. Nous espérons vous retrouver prochainement.' : 'Infogérance, administration réseau, support technique et dépannage informatique pour PME et particuliers. Bouillante, Guadeloupe.',
     url: 'https://pixeltech-antilles.com/services',
   },
 }
