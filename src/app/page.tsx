@@ -4,17 +4,18 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import TrackedLink from '@/components/TrackedLink'
 import type { Metadata } from 'next'
+import { SITE_PAUSED } from '@/lib/site-mode'
 
 export const metadata: Metadata = {
-  title: 'PixelTech - Administration réseau & Système en Guadeloupe | Bouillante',
-  description: 'PixelTech Antilles - Expert en administration réseau et système en Guadeloupe. Infogérance, support technique, dépannage informatique. Basé à Bouillante, intervention rapide. Solutions open source professionnelles.',
+  title: SITE_PAUSED ? 'PixelTech Antilles – Activité temporairement suspendue' : 'PixelTech - Administration réseau & Système en Guadeloupe | Bouillante',
+  description: SITE_PAUSED ? 'PixelTech Antilles suspend temporairement ses activités. Merci pour votre confiance. Nous espérons vous retrouver prochainement.' : 'PixelTech Antilles - Expert en administration réseau et système en Guadeloupe. Infogérance, support technique, dépannage informatique. Basé à Bouillante, intervention rapide. Solutions open source professionnelles.',
   keywords: 'PixelTech, PixelTech Antilles, Pixeltech, Pixeltech Antilles, administration réseau, infogérance, support technique, dépannage informatique, Guadeloupe, Bouillante, virtualisation, monitoring, Zabbix, GLPI, open source',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'PixelTech - Administration réseau & Système en Guadeloupe',
-    description: 'Expert en administration réseau et système. Infogérance, support technique, dépannage informatique. Bouillante, Guadeloupe.',
+    title: SITE_PAUSED ? 'PixelTech Antilles – Activité temporairement suspendue' : 'PixelTech - Administration réseau & Système en Guadeloupe',
+    description: SITE_PAUSED ? 'PixelTech Antilles suspend temporairement ses activités. Merci pour votre confiance. Nous espérons vous retrouver prochainement.' : 'Expert en administration réseau et système. Infogérance, support technique, dépannage informatique. Bouillante, Guadeloupe.',
     url: 'https://pixeltech-antilles.com',
   },
 }
