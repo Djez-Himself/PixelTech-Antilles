@@ -4,17 +4,18 @@ import PageHero from '@/components/PageHero'
 import Breadcrumb from '@/components/Breadcrumb'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { SITE_PAUSED } from '@/lib/site-mode'
 
 export const metadata: Metadata = {
-  title: 'À propos - PixelTech | Expert IT en Guadeloupe',
-  description: 'PixelTech Antilles - Découvrez Benoit Paterne, expert en administration réseau et système basé à Bouillante, Guadeloupe. Parcours, compétences et valeurs. Solutions IT professionnelles.',
+  title: SITE_PAUSED ? 'PixelTech Antilles – Activité temporairement suspendue' : 'À propos - PixelTech | Expert IT en Guadeloupe',
+  description: SITE_PAUSED ? 'PixelTech Antilles suspend temporairement ses activités. Merci pour votre confiance. Nous espérons vous retrouver prochainement.' : 'PixelTech Antilles - Découvrez Benoit Paterne, expert en administration réseau et système basé à Bouillante, Guadeloupe. Parcours, compétences et valeurs. Solutions IT professionnelles.',
   keywords: 'PixelTech, PixelTech Antilles, Pixeltech, expert IT Guadeloupe, administration réseau, Benoit Paterne, Bouillante, infogérance, support technique',
   alternates: {
     canonical: '/a-propos',
   },
   openGraph: {
-    title: 'À propos - PixelTech | Expert IT en Guadeloupe',
-    description: 'Découvrez Benoit Paterne, expert en administration réseau et système basé à Bouillante, Guadeloupe.',
+    title: SITE_PAUSED ? 'PixelTech Antilles – Activité temporairement suspendue' : 'À propos - PixelTech | Expert IT en Guadeloupe',
+    description: SITE_PAUSED ? 'PixelTech Antilles suspend temporairement ses activités. Merci pour votre confiance. Nous espérons vous retrouver prochainement.' : 'Découvrez Benoit Paterne, expert en administration réseau et système basé à Bouillante, Guadeloupe.',
     url: 'https://pixeltech-antilles.com/a-propos',
   },
 }
