@@ -5,17 +5,18 @@ import TarifsTabs from '@/components/TarifsTabs'
 import Breadcrumb from '@/components/Breadcrumb'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { SITE_PAUSED } from '@/lib/site-mode'
 
 export const metadata: Metadata = {
-  title: 'Tarifs - PixelTech | Tarification transparente pour services IT en Guadeloupe',
-  description: 'Tarifs transparents pour services IT en Guadeloupe : dépannage informatique (30-90€), administration réseau PME (80-800€/mois), support technique. Devis gratuit, forfaits adaptés. Bouillante.',
+  title: SITE_PAUSED ? 'PixelTech Antilles – Activité temporairement suspendue' : 'Tarifs - PixelTech | Tarification transparente pour services IT en Guadeloupe',
+  description: SITE_PAUSED ? 'PixelTech Antilles suspend temporairement ses activités. Merci pour votre confiance. Nous espérons vous retrouver prochainement.' : 'Tarifs transparents pour services IT en Guadeloupe : dépannage informatique (30-90€), administration réseau PME (80-800€/mois), support technique. Devis gratuit, forfaits adaptés. Bouillante.',
   keywords: 'PixelTech, PixelTech Antilles, Pixeltech, tarifs informatique, prix dépannage, tarifs support technique, devis informatique, Guadeloupe, Bouillante',
   alternates: {
     canonical: '/tarifs',
   },
   openGraph: {
-    title: 'Tarifs - PixelTech | Tarification transparente',
-    description: 'Tarifs transparents pour dépannage informatique, administration réseau et support technique. Bouillante, Guadeloupe.',
+    title: SITE_PAUSED ? 'PixelTech Antilles – Activité temporairement suspendue' : 'Tarifs - PixelTech | Tarification transparente',
+    description: SITE_PAUSED ? 'PixelTech Antilles suspend temporairement ses activités. Merci pour votre confiance. Nous espérons vous retrouver prochainement.' : 'Tarifs transparents pour dépannage informatique, administration réseau et support technique. Bouillante, Guadeloupe.',
     url: 'https://pixeltech-antilles.com/tarifs',
   },
 }
